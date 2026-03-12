@@ -12,6 +12,9 @@ COPY config/ app/config/
 # On rend les scripts exécutables (chemin relatif au WORKDIR)
 RUN chmod +x app/scripts/*.sh
 
+
+ENTRYPOINT ["/bin/bash", "/app/scripts/trieur.sh"]
+
 # Commande de lancement
-CMD ["/bin/bash", "/app/scripts/trieur.sh", "--help"]
+CMD ["--help"]
 
