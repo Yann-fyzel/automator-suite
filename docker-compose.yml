@@ -1,0 +1,7 @@
+services:
+  trieur:
+    build: .
+    image: automator-suite:v1.1.0
+    volumes:
+      - .:/data
+    command: ["/data"]
