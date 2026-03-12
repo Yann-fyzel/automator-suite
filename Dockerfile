@@ -6,11 +6,11 @@ RUN apk add --no-cache bash
 WORKDIR /app
 
 # On copie les dossiers (Docker créera /app/scripts et /app/config)
-COPY scripts/ app/scripts/
-COPY config/ app/config/
+COPY scripts/ ./scripts/
+COPY config/ ./config/
 
 # On rend les scripts exécutables (chemin relatif au WORKDIR)
-RUN chmod +x app/scripts/*.sh
+RUN chmod +x ./scripts/*.sh
 
 
 ENTRYPOINT ["/bin/bash", "/app/scripts/trieur.sh"]
